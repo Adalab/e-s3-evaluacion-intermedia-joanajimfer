@@ -11,7 +11,8 @@ class PokeList extends Component {
                     const name = pokemon.name;
                     const url = pokemon.url;
                     const key = pokemon.id;
-                    return <Pokemon i={key} name={name} url={url} />
+                    const evolution = pokemon.evolution;
+                    return <Pokemon i={key} name={name} url={url} evolution={evolution} />
                 })}
             </ul>
         )
