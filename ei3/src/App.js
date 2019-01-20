@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PokeList from './components/PokeList';
+import PokeList from './components/PokeList/PokeList';
 import './App.css';
-
+import PropTypes from 'prop-types';
 
 
 class App extends Component {
@@ -23,13 +23,18 @@ class App extends Component {
     };
   }
   render() {
-     
     return (
       <div className="App">
-        <PokeList pokemon={this.state.pokemon} />
+      <h1>Mis Pokemon</h1>
+        <PokeList pokemon={this.state.pokemon} 
+        />
       </div>
     );
   }
+}
+
+PokeList.propTypes = {
+  pokemon: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default App;

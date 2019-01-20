@@ -12,15 +12,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.card {
-  display: block;
-  width: 140px;
-  height: 180px;
-  background-color: grey;
-  margin: 30px;
-}
-.poke__card {
-  display: flex;
-  flex-wrap: wrap;
 
-}

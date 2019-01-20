@@ -1,0 +1,15 @@
+.pokemon_name{
+    color: blue;
+    font-size: 21px;
+}
+.types_list {
+    list-style: none;
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+}
+.types_item {
+    padding: 5px;
+    text-transform: uppercase;
+    color: blue;
+}
