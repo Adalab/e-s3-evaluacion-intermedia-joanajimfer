@@ -19,14 +19,37 @@ class App extends Component {
         {"id":8,"name":"wartortle","types":["water"],"evolution":"squirtle","url":"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png"},
         {"id":9,"name":"blastoise","types":["water"],"evolution":"wartortle","url":"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"},
         {"id":10,"name":"caterpie","types":["bug"],"evolution":null,"url":"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png"}
-      ]
+      ],
+      query:""
     };
+    this.handleInput = this.handleInput.bind(this);
+  }
+  handleInput(e) {
+    const inputQuery = e.target.value;
+    this.setState({
+      query: inputQuery,
+    })
+  }
+
+  filterPokemon() {
+    const filterPokemon = this.state.pokemon.filter(item => {
+      const pokemonName = item.name;
+      console.log(pokemonName);
+      if(pokemonName.includes(this.state.query)) {
+        return true
+      } else {
+        return false
+      }
+    })
+    return filterPokemon;
   }
   render() {
+    const arrayOfFilterPokemon = this.filterPokemon();
     return (
       <div className="App">
       <h1>Mis Pokemon</h1>
-        <PokeList pokemon={this.state.pokemon} 
+        <input placeholder="Busca por su nombre" onChange={this.handleInput} value={this.state.query}></input>
+        <PokeList pokemon={arrayOfFilterPokemon} 
         />
       </div>
     );
